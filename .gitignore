@@ -1,0 +1,5 @@
+.vercel/
+dpo-course/
+node_modules/
+.DS_Store
+*.log
