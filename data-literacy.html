@@ -76,7 +76,8 @@
   /* Callouts */
   .box{border-radius:var(--radius); padding:14px 16px 14px 16px; margin:16px 0; border:1px solid var(--line);
     background:var(--panel);}
-  .box .h{font-weight:800; font-size:14px; display:flex; align-items:center; gap:8px; margin-bottom:4px;}
+  .box .h{font-weight:800; font-size:14px; display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;}
+  .box .h button[data-csv]{flex:0 0 auto; white-space:nowrap;}
   .box p:last-child{margin-bottom:0;}
   .box.ex{background:var(--ok-soft); border-color:#bfe6d2;}
   .box.ex .h{color:var(--ok);}
@@ -517,33 +518,35 @@
       <li><a href="#netsec">15. An ninh mạng &amp; mối đe dọa</a></li>
       <li><a href="#itgc">16. ITGC &amp; ITAC ★</a></li>
       <li><a href="#iso27k">17. ISO 27001 &amp; chuẩn liên quan</a></li>
-      <li><a href="#s8">18. Giải mã câu hỏi IT</a></li>
+      <li><a href="#iso27701">18. ISO 27701 + Checklist review ★</a></li>
+      <li><a href="#s8">19. Giải mã câu hỏi IT ★</a></li>
       <li><a href="#quiz2" data-quiz-nav="quiz2">📝 Trắc nghiệm Module 2</a></li>
 
-      <li class="group">Module 3 · Privacy (~3h)</li>
-      <li><a href="#principles">19. Nguyên tắc bảo vệ DLCN</a></li>
-      <li><a href="#legalbasis">20. Căn cứ pháp lý xử lý</a></li>
-      <li><a href="#s9">21. Data flow (luồng)</a></li>
-      <li><a href="#s10">22. Data inventory</a></li>
-      <li><a href="#s11">23. Phân loại dữ liệu</a></li>
-      <li><a href="#s12">24. Data mapping &amp; ROPA ★</a></li>
-      <li><a href="#dpia">25. DPIA — đánh giá tác động</a></li>
-      <li><a href="#dsar">26. Quyền của chủ thể dữ liệu</a></li>
-      <li><a href="#thirdparty">27. Quản lý bên thứ ba</a></li>
-      <li><a href="#breach">28. Sự cố lộ lọt dữ liệu</a></li>
-      <li><a href="#legalvn">29. Khung pháp lý Việt Nam</a></li>
+      <li class="group">Module 3 · Privacy (~3.5h)</li>
+      <li><a href="#principles">20. Nguyên tắc bảo vệ DLCN</a></li>
+      <li><a href="#legalbasis">21. Căn cứ pháp lý xử lý</a></li>
+      <li><a href="#s9">22. Data flow (luồng)</a></li>
+      <li><a href="#s10">23. Data inventory</a></li>
+      <li><a href="#s11">24. Phân loại dữ liệu</a></li>
+      <li><a href="#s12">25. Data mapping &amp; ROPA ★</a></li>
+      <li><a href="#dpia">26. DPIA / PIA (+ khi nào làm lại)</a></li>
+      <li><a href="#dsar">27. Quyền chủ thể + quy trình DSAR</a></li>
+      <li><a href="#thirdparty">28. Bên thứ ba + DPA</a></li>
+      <li><a href="#breach">29. Sự cố lộ lọt + escalation</a></li>
+      <li><a href="#legalvn">30. Khung pháp lý Việt Nam</a></li>
+      <li><a href="#intake">31. Tiếp nhận &amp; đánh giá yêu cầu ★</a></li>
       <li><a href="#quiz3" data-quiz-nav="quiz3">📝 Trắc nghiệm Module 3</a></li>
 
       <li class="group">Module 4 · Mở rộng (~1h)</li>
-      <li><a href="#bi">30. Phân tích &amp; trực quan hóa</a></li>
-      <li><a href="#ai">31. AI, dữ liệu lớn &amp; privacy</a></li>
-      <li><a href="#casestudy">32. Case study tổng hợp</a></li>
+      <li><a href="#bi">32. Phân tích &amp; trực quan hóa</a></li>
+      <li><a href="#ai">33. AI, dữ liệu lớn &amp; privacy</a></li>
+      <li><a href="#casestudy">34. Case study tổng hợp</a></li>
       <li><a href="#quiz4" data-quiz-nav="quiz4">📝 Trắc nghiệm Module 4</a></li>
 
       <li class="group">Module 5 · Trở thành DPO (~1.5h)</li>
-      <li><a href="#dpo-role">33. Vai trò DPO (deep-dive)</a></li>
-      <li><a href="#raci">34. Ma trận RACI chi tiết</a></li>
-      <li><a href="#dpo-roadmap">35. DPO cần hiểu data tới đâu</a></li>
+      <li><a href="#dpo-role">35. Vai trò DPO (deep-dive)</a></li>
+      <li><a href="#raci">36. Ma trận RACI chi tiết ★</a></li>
+      <li><a href="#dpo-roadmap">37. DPO cần hiểu data tới đâu</a></li>
       <li><a href="#quiz5" data-quiz-nav="quiz5">📝 Trắc nghiệm Module 5</a></li>
 
       <li class="group">Phụ lục</li>
@@ -567,7 +570,7 @@
         <span class="pill">🏦 Ví dụ ngân hàng</span>
         <span class="pill">🛠️ Template &amp; ROPA</span>
       </div>
-      <div class="meta">Tài liệu do cá nhân tự biên soạn · không thay thế tư vấn pháp lý · ví dụ dùng dữ liệu giả</div>
+      <div class="meta">Tài liệu do cá nhân tự biên soạn · cập nhật theo Luật BVDLCN 2026 · không thay thế tư vấn pháp lý · ví dụ dùng dữ liệu giả</div>
     </div>
 
     <h3>Tài liệu này dành cho ai?</h3>
@@ -580,7 +583,7 @@
 
     <div class="box term">
       <div class="h">📖 Cách đọc tài liệu này</div>
-      <p>Đây là một <strong>giáo trình tự học</strong> chia làm 5 module, tổng cộng khoảng <strong>10.5 giờ</strong>. Mỗi module có <strong>bài tập tự luận</strong> và một <strong>bài trắc nghiệm chấm điểm</strong> (đáp án gợi ý ở phụ lục cuối). Mỗi bài học đều có các khối màu giúp bạn định hướng:</p>
+      <p>Đây là một <strong>giáo trình tự học</strong> chia làm 5 module, tổng cộng khoảng <strong>11–12 giờ</strong>. Mỗi module có <strong>bài tập tự luận</strong> và một <strong>bài trắc nghiệm chấm điểm</strong> (đáp án gợi ý ở phụ lục cuối). Mỗi bài học đều có các khối màu giúp bạn định hướng:</p>
       <p style="margin-top:8px">
         <span class="chip pub">💡 Ví dụ ngân hàng</span>
         <span class="chip int">🔍 Tại sao IT hỏi</span>
@@ -590,16 +593,16 @@
       </p>
     </div>
 
-    <h3>🗺️ Lộ trình học (~10.5 giờ)</h3>
+    <h3>🗺️ Lộ trình học (~11–12 giờ)</h3>
     <p>Bạn có thể học rải trong vài ngày. Gợi ý chia buổi:</p>
     <div class="tablewrap">
       <table>
         <tr><th>Module</th><th>Nội dung chính</th><th>Bài</th><th>Thời lượng</th></tr>
         <tr><td><strong>1. Nền tảng dữ liệu</strong></td><td>Dữ liệu là gì, DAMA-DMBOK, vòng đời, quản trị, chất lượng, metadata, vai trò</td><td>1–8</td><td>~2 giờ</td></tr>
-        <tr><td><strong>2. Hiểu thế giới IT</strong></td><td>Server, database, <strong>SQL</strong>, cloud, tích hợp, security, an ninh mạng, <strong>ITGC/ITAC</strong>, <strong>ISO 27001</strong></td><td>9–18</td><td>~3 giờ</td></tr>
-        <tr><td><strong>3. Privacy thực chiến</strong></td><td>Nguyên tắc, căn cứ pháp lý, data flow/inventory/mapping, ROPA, DPIA, quyền chủ thể, bên thứ ba, sự cố, luật VN</td><td>19–29</td><td>~3 giờ</td></tr>
-        <tr><td><strong>4. Mở rộng</strong></td><td>Phân tích dữ liệu &amp; BI, AI và dữ liệu lớn, case study tổng hợp</td><td>30–32</td><td>~1 giờ</td></tr>
-        <tr><td><strong>5. Trở thành DPO</strong></td><td>Deep-dive vai trò DPO, ma trận RACI, mức độ hiểu data cần thiết &amp; lộ trình sự nghiệp</td><td>33–35</td><td>~1.5 giờ</td></tr>
+        <tr><td><strong>2. Hiểu thế giới IT</strong></td><td>Server, database, <strong>SQL</strong>, cloud, tích hợp, security, an ninh mạng, <strong>ITGC/ITAC</strong>, <strong>ISO 27001/27701 + checklist</strong></td><td>9–19</td><td>~3.5 giờ</td></tr>
+        <tr><td><strong>3. Privacy thực chiến</strong></td><td>Nguyên tắc, căn cứ pháp lý, data flow/inventory/mapping, ROPA, DPIA/PIA, DSAR, <strong>DPA</strong>, sự cố + escalation, luật VN 2026, <strong>khung tiếp nhận &amp; đánh giá yêu cầu</strong></td><td>20–31</td><td>~3.5 giờ</td></tr>
+        <tr><td><strong>4. Mở rộng</strong></td><td>Phân tích dữ liệu &amp; BI, AI và dữ liệu lớn, case study tổng hợp</td><td>32–34</td><td>~1 giờ</td></tr>
+        <tr><td><strong>5. Trở thành DPO</strong></td><td>Deep-dive vai trò DPO, ma trận RACI, mức độ hiểu data cần thiết &amp; lộ trình sự nghiệp</td><td>35–37</td><td>~1.5 giờ</td></tr>
       </table>
     </div>
     <div class="tldr"><b>Mục tiêu cuối khóa:</b> tự tin nói chuyện với IT bằng đúng thuật ngữ, hiểu vì sao họ hỏi từng câu, và <b>tự tay làm được data mapping → ROPA</b> cho một quy trình ngân hàng theo pháp luật Việt Nam.</div>
@@ -1223,14 +1226,14 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== ITGC/ITAC ====================== -->
-    <h2 class="anchor" id="itgc">16. ITGC &amp; ITAC — các "chốt kiểm soát" CNTT <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="itgc">16. ITGC &amp; ITAC — các "chốt kiểm soát" CNTT ★ <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~18 phút · Ngôn ngữ kiểm soát mà DPO dùng để "drive" system owner</p>
     <blockquote>Trong thực tế, DPO hiếm khi tự tay cấu hình hệ thống. Thay vào đó, DPO <strong>yêu cầu &amp; thúc đẩy (drive) chủ sở hữu hệ thống (system owner) triển khai các chốt kiểm soát</strong> bảo vệ dữ liệu. Muốn drive được, bạn phải nói đúng "ngôn ngữ kiểm soát": ITGC &amp; ITAC.</blockquote>
 
     <h3>16.1 ITGC — IT General Controls (Kiểm soát chung CNTT)</h3>
     <div class="box def">
       <div class="h">📖 Định nghĩa</div>
-      <p><strong>ITGC</strong> là các kiểm soát <em>nền</em> áp dụng cho <strong>toàn bộ môi trường CNTT</strong> — mọi ứng dụng đều "đứng" trên chúng. Nếu ITGC yếu, thì kiểm soát trong từng ứng dụng (ITAC) cũng mất ý nghĩa.</p>
+      <p><strong>ITGC (IT General Controls — Kiểm soát chung CNTT)</strong> là các kiểm soát <em>nền</em> áp dụng cho <strong>toàn bộ môi trường CNTT</strong> — mọi ứng dụng đều "đứng" trên chúng. Nếu ITGC yếu, thì kiểm soát trong từng ứng dụng (ITAC) cũng mất ý nghĩa.</p>
     </div>
     <div class="tablewrap">
       <table>
@@ -1246,7 +1249,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     <h3>16.2 ITAC — IT Application Controls (Kiểm soát ứng dụng)</h3>
     <div class="box def">
       <div class="h">📖 Định nghĩa</div>
-      <p><strong>ITAC</strong> là các kiểm soát <em>bên trong một ứng dụng cụ thể</em>, đảm bảo dữ liệu/giao dịch <strong>đầy đủ, chính xác, hợp lệ &amp; được phép</strong> — gắn với 3 điểm: đầu vào (input) → xử lý (processing) → đầu ra (output).</p>
+      <p><strong>ITAC (IT Application Controls — Kiểm soát ứng dụng)</strong> là các kiểm soát <em>bên trong một ứng dụng cụ thể</em>, đảm bảo dữ liệu/giao dịch <strong>đầy đủ, chính xác, hợp lệ &amp; được phép</strong> — gắn với 3 điểm: đầu vào (input) → xử lý (processing) → đầu ra (output).</p>
     </div>
     <div class="tablewrap">
       <table>
@@ -1288,6 +1291,27 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
         <tr><td><strong>SOC 1 (ISAE 3402) / SOC 2</strong></td><td>Báo cáo kiểm toán độc lập về kiểm soát của bên cung cấp dịch vụ</td><td>★ Bằng chứng cho <em>ITAC/kiểm soát giao dịch</em> (SOC 1) &amp; an toàn vận hành (SOC 2) — bổ sung cho ISO</td></tr>
       </table>
     </div>
+    <h3>17.2 "Bên trong" ISO 27001 có gì? (mức tổng quan)</h3>
+    <p>Không cần thuộc lòng, nhưng DPO nên biết <em>overall</em> một ISMS gồm hai phần:</p>
+    <div class="twocol">
+      <div class="card">
+        <h4>① Phần "quản lý" (Điều khoản 4–10)</h4>
+        <p>Bộ khung vận hành ISMS: bối cảnh tổ chức &amp; phạm vi (4) · cam kết lãnh đạo &amp; chính sách (5) · <strong>quản lý rủi ro</strong> &amp; mục tiêu (6) · nguồn lực, năng lực, nhận thức (7) · vận hành (8) · đo lường &amp; <strong>đánh giá nội bộ</strong> (9) · <strong>cải tiến</strong> &amp; khắc phục (10).</p>
+      </div>
+      <div class="card">
+        <h4>② Phần "biện pháp kiểm soát" (Annex A)</h4>
+        <p>Bản 2022 có <strong>93 controls</strong>, gom thành <strong>4 nhóm</strong> (themes). Đây là "kho" control để chọn theo rủi ro &amp; khai trong SoA.</p>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Nhóm control (Annex A 2022)</th><th>Bao gồm (ví dụ)</th><th>Liên quan DLCN</th></tr>
+        <tr><td><strong>A.5 — Tổ chức (Organizational)</strong></td><td>Chính sách, vai trò, phân loại thông tin, quản lý nhà cung cấp, xử lý sự cố, tuân thủ pháp luật</td><td>★★★ (governance, bên thứ ba, sự cố)</td></tr>
+        <tr><td><strong>A.6 — Con người (People)</strong></td><td>Sàng lọc tuyển dụng, đào tạo nhận thức, NDA, kỷ luật, làm việc từ xa</td><td>★★ (mắt xích con người)</td></tr>
+        <tr><td><strong>A.7 — Vật lý (Physical)</strong></td><td>Khu vực an ninh, kiểm soát ra vào, thiết bị, hủy phương tiện lưu trữ</td><td>★ (data center, hủy dữ liệu)</td></tr>
+        <tr><td><strong>A.8 — Công nghệ (Technological)</strong></td><td>Quản lý truy cập, mã hóa, sao lưu, log, an toàn phát triển, chống mã độc, mã hóa đường truyền</td><td>★★★ (chính là nhiều ITGC/ITAC)</td></tr>
+      </table>
+    </div>
     <div class="box ex">
       <div class="h">💡 Ghép mảnh: ITGC/ITAC ↔ ISO 27001 ↔ Privacy</div>
       <p>Hình dung như xây nhà: <strong>ISO 27001/27701</strong> là <em>bản quy chuẩn xây dựng</em> (làm có hệ thống, chứng minh được) → trong đó có rất nhiều <strong>ITGC/ITAC</strong> là <em>các hạng mục kiểm soát cụ thể</em> → tất cả phục vụ mục tiêu cuối: <strong>bảo vệ dữ liệu cá nhân</strong> theo luật. DPO đứng ở tầng "yêu cầu &amp; giám sát", IT/system owner đứng ở tầng "triển khai".</p>
@@ -1299,7 +1323,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
         <li><strong>Với nhà cung cấp:</strong> yêu cầu <strong>chứng chỉ ISO 27001 (và 27701/27017/27018 nếu cloud)</strong> như điều kiện thẩm định — bằng chứng họ có <em>ITGC</em> tử tế ở cấp tổ chức (gắn với <a href="#thirdparty">Quản lý bên thứ ba</a> &amp; DPA).</li>
         <li><strong>⚠️ Đọc chứng chỉ ISO phải xem KỸ phạm vi (scope/SoA):</strong> chứng chỉ chỉ bao trùm đúng dịch vụ/hệ thống đã khai — nhà cung cấp có thể được chứng nhận cho một dịch vụ KHÁC với cái bán cho bạn. Hỏi rõ scope.</li>
         <li><strong>ITAC ≠ ISO:</strong> kiểm soát ứng dụng/giao dịch (ITAC) của một hệ thống cụ thể thường KHÔNG nằm trong scope ISMS chung → đòi thêm <strong>báo cáo SOC 1 (ISAE 3402)</strong> cho transaction controls, SOC 2 cho an toàn vận hành.</li>
-        <li><strong>Lưu ý:</strong> chứng chỉ ISO là <em>bằng chứng tốt</em> nhưng KHÔNG thay thế nghĩa vụ tuân thủ pháp luật VN — vẫn phải đối chiếu PDPL/Nghị định 13 &amp; quy định SBV.</li>
+        <li><strong>Lưu ý:</strong> chứng chỉ ISO là <em>bằng chứng tốt</em> nhưng KHÔNG thay thế nghĩa vụ tuân thủ pháp luật VN — vẫn phải đối chiếu PDPL (Luật BVDLCN) &amp; quy định SBV.</li>
       </ul>
     </div>
     <div class="box key">
@@ -1307,8 +1331,47 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       <p>DPO không cần là chuyên gia ISO 27001. Nhưng biết <em>viện dẫn</em> đúng chuẩn giúp bạn biến yêu cầu privacy mơ hồ thành <strong>checklist kiểm soát mà system owner &amp; nhà cung cấp buộc phải làm</strong> — và có cơ sở để đo lường, audit.</p>
     </div>
 
+    <!-- ====================== ISO 27701 ====================== -->
+    <h2 class="anchor" id="iso27701">18. ISO/IEC 27701 (PIMS) &amp; checklist review cho DPO ★ <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <p class="lesson-meta">⏱ ~15 phút · Chuẩn "privacy" + bộ checklist DPO mang đi review</p>
+    <p>Nếu ISO 27001 lo <em>an toàn thông tin</em>, thì <strong>ISO/IEC 27701</strong> là phần <em>mở rộng về quyền riêng tư</em> — biến ISMS thành <strong>PIMS (Privacy Information Management System — Hệ thống quản lý thông tin riêng tư)</strong>. Đây là chuẩn gần với công việc DPO nhất.</p>
+    <div class="box def">
+      <div class="h">📖 ISO 27701 thêm gì so với 27001?</div>
+      <ul style="margin:.2em 0">
+        <li><strong>Yêu cầu PIMS</strong>: gắn trách nhiệm về quyền riêng tư vào hệ thống quản lý (vai trò, đánh giá rủi ro riêng tư, PIA/DPIA).</li>
+        <li><strong>Hướng dẫn cho Bên kiểm soát (Controller)</strong>: căn cứ xử lý, sự đồng ý, quyền chủ thể, minh bạch, thông báo, chuyển dữ liệu… (ánh xạ tốt sang PDPL/GDPR).</li>
+        <li><strong>Hướng dẫn cho Bên xử lý (Processor)</strong>: xử lý theo chỉ dẫn, hỗ trợ controller, sub-processor, thông báo sự cố… (chính là "ruột" của một <a href="#thirdparty">DPA</a>).</li>
+      </ul>
+      <p style="margin-bottom:0">→ DPO dùng 27701 như một <strong>bản đồ nghĩa vụ privacy</strong> để đối chiếu hệ thống/nhà cung cấp.</p>
+    </div>
+    <div class="box ex">
+      <div class="h">💡 Vì sao DPO thích 27701</div>
+      <p>Một nhà cung cấp có chứng chỉ <strong>27001 + 27701</strong> nghĩa là họ không chỉ "an toàn" mà còn có quy trình <em>tôn trọng quyền riêng tư</em> — giảm rất nhiều việc thẩm định thủ công. Nhưng vẫn phải xem <strong>scope/SoA</strong> (như bài trước) và đối chiếu PDPL.</p>
+    </div>
+
+    <h3>18.1 Checklist DPO đi review một hệ thống / nhà cung cấp</h3>
+    <p>Bộ này gom ITGC + ITAC + vùng control ISO + privacy thành các câu hỏi "đánh dấu là dùng được". Tải về điền dần:</p>
+    <div class="box tpl">
+      <div class="h">📋 Checklist review (ITGC · ITAC · Privacy) <button class="btn btn-ghost" style="padding:5px 12px;font-size:13px;margin-left:8px" data-csv="isoreview">⬇ Tải .CSV</button></div>
+      <div class="tablewrap">
+        <table id="tpl-isoreview">
+          <tr><th>Nhóm</th><th>Câu hỏi cần đánh dấu</th><th>Bằng chứng cần xin</th></tr>
+          <tr><td><strong>Quản trị</strong></td><td>Có chính sách bảo mật/privacy? Có người chịu trách nhiệm (DPO/owner)?</td><td>Chính sách, sơ đồ vai trò</td></tr>
+          <tr><td><strong>ITGC — Truy cập</strong></td><td>Phân quyền theo vai trò (RBAC)? Rà soát quyền định kỳ? Thu hồi khi nghỉ việc?</td><td>Báo cáo rà quyền, quy trình joiner/mover/leaver</td></tr>
+          <tr><td><strong>ITGC — Thay đổi</strong></td><td>Mọi thay đổi có kiểm thử &amp; phê duyệt? Tách môi trường test/prod?</td><td>Change log, quy trình SDLC</td></tr>
+          <tr><td><strong>ITGC — Vận hành</strong></td><td>Sao lưu mã hóa &amp; kiểm tra phục hồi? Log truy cập dữ liệu nhạy cảm được lưu?</td><td>Lịch backup, mẫu audit log</td></tr>
+          <tr><td><strong>ITAC — Ứng dụng</strong></td><td>Kiểm tra hợp lệ đầu vào? Masking khi hiển thị? Maker–checker khi xuất dữ liệu?</td><td>Ảnh màn hình, SOC 1/ISAE 3402</td></tr>
+          <tr><td><strong>Bảo mật dữ liệu</strong></td><td>Mã hóa khi lưu &amp; khi truyền? Quản lý khóa?</td><td>Chuẩn mã hóa, chứng chỉ</td></tr>
+          <tr><td><strong>Privacy</strong></td><td>Có căn cứ pháp lý? Tối thiểu hóa? Thời hạn lưu &amp; xóa? Hỗ trợ quyền chủ thể?</td><td>ROPA, chính sách lưu trữ</td></tr>
+          <tr><td><strong>Cross-border</strong></td><td>Dữ liệu có rời VN? Region nào? Có hồ sơ chuyển ra nước ngoài?</td><td>Sơ đồ hạ tầng, hồ sơ TIA</td></tr>
+          <tr><td><strong>Chứng chỉ</strong></td><td>ISO 27001/27701? SCOPE có bao trùm dịch vụ này? SOC 1/SOC 2?</td><td>Chứng chỉ + SoA, báo cáo SOC</td></tr>
+          <tr><td><strong>Sự cố</strong></td><td>Có quy trình &amp; cam kết thông báo sự cố cho mình kịp thời?</td><td>Điều khoản DPA, runbook</td></tr>
+        </table>
+      </div>
+    </div>
+
     <!-- ====================== S8 ====================== -->
-    <h2 class="anchor" id="s8">18. "Giải mã" những câu IT hay hỏi bạn <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="s8">19. "Giải mã" những câu IT hay hỏi bạn ★ <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~12 phút · Bảng tra: IT hỏi gì ↔ ý thực sự ↔ bạn chuẩn bị thế nào</p>
     <p>Đây là bảng tra cứu thực chiến — khi IT hỏi một câu, họ <em>thực sự</em> muốn biết gì, vì sao nó liên quan privacy, và bạn nên chuẩn bị trả lời thế nào.</p>
     <div class="tablewrap">
@@ -1390,9 +1453,9 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== PRINCIPLES ====================== -->
-    <h2 class="anchor" id="principles">19. Nguyên tắc bảo vệ dữ liệu cá nhân <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="principles">20. Nguyên tắc bảo vệ dữ liệu cá nhân <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~18 phút · "Kim chỉ nam" cho mọi quyết định privacy</p>
-    <p>Mọi hoạt động xử lý dữ liệu cá nhân đều phải tuân theo một bộ nguyên tắc. Bộ dưới đây tổng hợp tinh thần chung của pháp luật Việt Nam (Nghị định 13/2023/NĐ-CP) và chuẩn quốc tế (GDPR) — rất giống nhau:</p>
+    <p>Mọi hoạt động xử lý dữ liệu cá nhân đều phải tuân theo một bộ nguyên tắc. Bộ dưới đây tổng hợp tinh thần chung của pháp luật Việt Nam (Luật Bảo vệ Dữ liệu Cá nhân — PDPL, hiệu lực 2026) và chuẩn quốc tế (GDPR) — rất giống nhau:</p>
     <div class="tablewrap">
       <table>
         <tr><th>Nguyên tắc</th><th>Nghĩa</th><th>Vi phạm điển hình</th></tr>
@@ -1422,7 +1485,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== LEGAL BASIS ====================== -->
-    <h2 class="anchor" id="legalbasis">20. Căn cứ pháp lý để xử lý dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="legalbasis">21. Căn cứ pháp lý để xử lý dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~15 phút · "Tôi được phép xử lý dữ liệu này dựa trên cái gì?"</p>
     <p>Trước khi xử lý bất kỳ dữ liệu cá nhân nào, phải có <strong>căn cứ pháp lý (legal basis)</strong>. Sự đồng ý được nhắc đến nhiều, nhưng <strong>KHÔNG phải là căn cứ "trung tâm" hay cao hơn các căn cứ khác</strong> — đây là hiểu lầm tai hại nhất. Pháp luật Việt Nam liệt kê nhiều căn cứ <em>ngang hàng</em>; bạn phải chọn căn cứ <em>phù hợp với từng mục đích</em>:</p>
     <ul>
@@ -1442,7 +1505,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
     <div class="box law">
       <div class="h">📖 Lưu ý pháp luật Việt Nam</div>
-      <p>Danh mục căn cứ &amp; trường hợp xử lý không cần đồng ý do <strong>Luật Bảo vệ Dữ liệu Cá nhân (PDPL, hiệu lực 01/01/2026)</strong> và <strong>Nghị định 13/2023/NĐ-CP</strong> quy định. <em>Tài liệu nêu tinh thần chung; đối chiếu văn bản gốc hiện hành cho từng trường hợp.</em> Trong ROPA (mục <a href="#s12">Data mapping &amp; ROPA</a>), mỗi hoạt động xử lý <strong>bắt buộc</strong> ghi rõ căn cứ pháp lý.</p>
+      <p>Danh mục căn cứ &amp; trường hợp xử lý không cần đồng ý do <strong>Luật Bảo vệ Dữ liệu Cá nhân (PDPL — Luật 91/2025/QH15, hiệu lực 01/01/2026)</strong> và <strong>Nghị định 356/2025/NĐ-CP</strong> quy định. <strong>Lưu ý mới:</strong> sự đồng ý phải <strong>minh thị, xác minh được</strong> — cấm đồng ý ngầm/opt-out. <em>Tài liệu nêu tinh thần chung; đối chiếu văn bản gốc cho từng trường hợp.</em> Trong ROPA (mục <a href="#s12">Data mapping &amp; ROPA</a>), mỗi hoạt động xử lý <strong>bắt buộc</strong> ghi rõ căn cứ pháp lý.</p>
     </div>
     <div class="box ex">
       <div class="h">💡 Ví dụ ngân hàng</div>
@@ -1450,7 +1513,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== S9 ====================== -->
-    <h2 class="anchor" id="s9">21. Data flow — luồng dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="s9">22. Data flow — luồng dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~15 phút · Đọc &amp; vẽ sơ đồ đường đi của dữ liệu (DFD)</p>
     <p><strong>Data flow (luồng dữ liệu)</strong> là <em>đường đi của dữ liệu</em>: từ lúc được tạo/thu thập, qua các hệ thống xử lý, đến nơi lưu trữ và những nơi nó được chia sẻ. Cách thể hiện phổ biến là <strong>Data Flow Diagram (DFD)</strong>.</p>
     <h3>Bốn ký hiệu cơ bản của DFD</h3>
@@ -1502,7 +1565,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== S10 ====================== -->
-    <h2 class="anchor" id="s10">22. Data inventory — kiểm kê dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="s10">23. Data inventory — kiểm kê dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~10 phút · "Chúng ta thực sự đang có dữ liệu gì?" — kèm template tải về</p>
     <p><strong>Data inventory (kiểm kê dữ liệu)</strong> là <em>danh sách những loại dữ liệu mà tổ chức đang nắm giữ</em>, kèm thông tin cơ bản về chúng. Nó trả lời câu hỏi nền tảng nhất của privacy: <em>"Chúng ta thực sự đang có dữ liệu gì?"</em></p>
     <div class="box tpl">
@@ -1520,7 +1583,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     <p><strong>Inventory khác mapping thế nào?</strong> Inventory là <em>"chúng ta có gì"</em> (mức danh mục). <a href="#s12">Data mapping</a> đi sâu hơn: <em>từng trường dữ liệu chảy từ đâu đến đâu, vì mục đích gì, căn cứ pháp lý nào</em>. Bạn thường làm inventory trước để có bức tranh tổng, rồi mới mapping chi tiết cho từng hoạt động xử lý quan trọng.</p>
 
     <!-- ====================== S11 ====================== -->
-    <h2 class="anchor" id="s11">23. Phân loại dữ liệu (data classification) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="s11">24. Phân loại dữ liệu (data classification) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~12 phút · Gắn nhãn để biết áp mức bảo vệ nào · PII vs dữ liệu nhạy cảm</p>
     <p>Không phải dữ liệu nào cũng cần bảo vệ như nhau. Cần phân biệt <strong>HAI TRỤC độc lập</strong> — đây là chỗ rất nhiều người nhầm:</p>
     <div class="box def">
@@ -1559,7 +1622,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== S12 ====================== -->
-    <h2 class="anchor" id="s12">24. Data mapping &amp; ROPA — trọng tâm ★ <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="s12">25. Data mapping &amp; ROPA — trọng tâm ★ <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~25 phút · Bài quan trọng nhất — quy trình 7 bước, lineage &amp; template ROPA tải về</p>
     <p><strong>Data mapping</strong> là việc <em>lập bản đồ chi tiết cho dữ liệu cá nhân</em>: từng loại dữ liệu được thu thập từ đâu, chảy qua hệ thống nào, lưu ở đâu, dùng cho mục đích gì, căn cứ pháp lý nào, chia sẻ cho ai và lưu bao lâu. Đây là <em>nền móng</em> để xây <strong>ROPA</strong> và tuân thủ PDPL.</p>
 
@@ -1624,7 +1687,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     <p>Khi dữ liệu cá nhân của khách hàng Việt Nam <em>rời khỏi lãnh thổ Việt Nam</em> — ví dụ được lưu/xử lý trên cloud region ở nước ngoài, hoặc gửi cho đối tác nước ngoài — đó là <strong>chuyển dữ liệu xuyên biên giới</strong>, kéo theo nghĩa vụ tuân thủ riêng (lập hồ sơ đánh giá tác động chuyển dữ liệu, đảm bảo điều kiện theo pháp luật VN).</p>
     <div class="box warn">
       <div class="h">⚠️ Lưu ý PDPL — cross-border</div>
-      <p>Pháp luật Việt Nam (Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân, và Luật Bảo vệ Dữ liệu Cá nhân) đặt ra yêu cầu cho việc chuyển dữ liệu cá nhân ra nước ngoài. Trong data mapping, hãy luôn có cột <em>"dữ liệu có rời VN không?"</em> — và nếu có, đánh dấu để xử lý hồ sơ riêng. <strong>Đây chính là lý do bạn phải hỏi IT về "region" của cloud.</strong> <em>(Số điều khoản &amp; thủ tục cụ thể cần tra cứu văn bản pháp luật hiện hành — tài liệu này không thay thế tư vấn pháp lý.)</em></p>
+      <p>Pháp luật Việt Nam (Luật Bảo vệ Dữ liệu Cá nhân — PDPL &amp; Nghị định 356/2025/NĐ-CP) đặt ra yêu cầu cho việc chuyển dữ liệu cá nhân ra nước ngoài (kèm mốc nộp hồ sơ 60 ngày). Trong data mapping, hãy luôn có cột<em>"dữ liệu có rời VN không?"</em> — và nếu có, đánh dấu để xử lý hồ sơ riêng. <strong>Đây chính là lý do bạn phải hỏi IT về "region" của cloud.</strong> <em>(Số điều khoản &amp; thủ tục cụ thể cần tra cứu văn bản pháp luật hiện hành — tài liệu này không thay thế tư vấn pháp lý.)</em></p>
     </div>
 
     <h3>Checklist rà soát một data mapping "đạt"</h3>
@@ -1644,7 +1707,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== DPIA ====================== -->
-    <h2 class="anchor" id="dpia">25. DPIA — Đánh giá tác động bảo vệ dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="dpia">26. DPIA — Đánh giá tác động bảo vệ dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~15 phút · "Nghĩ trước khi làm" cho các hoạt động rủi ro cao</p>
     <div class="box def">
       <div class="h">📖 Định nghĩa</div>
@@ -1671,7 +1734,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
     <div class="box law">
       <div class="h">📖 Đừng nhầm DPIA với "hồ sơ chuyển dữ liệu ra nước ngoài"</div>
-      <p>Đây là <strong>hai hồ sơ riêng</strong>: (1) <strong>DPIA</strong> — đánh giá tác động <em>xử lý</em> DLCN; (2) <strong>Hồ sơ đánh giá tác động chuyển DLCN ra nước ngoài (TIA)</strong> — khi dữ liệu rời lãnh thổ VN. Một dự án dùng cloud nước ngoài thường cần <em>cả hai</em>. Cơ quan tiếp nhận là cơ quan chuyên trách thuộc <strong>Bộ Công an (A05)</strong> theo quy định hiện hành. Lưu ý: hồ sơ DPIA/TIA không chỉ "lập rồi để đó" — theo quy định, phải <strong>chủ động gửi cho cơ quan chuyên trách trong một thời hạn nhất định</strong> sau khi bắt đầu xử lý (và cập nhật khi có thay đổi). <em>Tra cứu thời hạn cụ thể trong văn bản hiện hành.</em></p>
+      <p>Đây là <strong>hai hồ sơ riêng</strong>: (1) <strong>DPIA</strong> — đánh giá tác động <em>xử lý</em> DLCN; (2) <strong>Hồ sơ đánh giá tác động chuyển DLCN ra nước ngoài (TIA)</strong> — khi dữ liệu rời lãnh thổ VN. Một dự án dùng cloud nước ngoài thường cần <em>cả hai</em>. Cơ quan tiếp nhận là cơ quan chuyên trách thuộc <strong>Bộ Công an (A05)</strong> theo quy định hiện hành. Lưu ý: hồ sơ không chỉ "lập rồi để đó" — theo PDPL/NĐ356 phải <strong>chủ động gửi cơ quan chuyên trách trong <u>60 ngày</u></strong>: DPIA trong 60 ngày kể từ khi bắt đầu xử lý; hồ sơ chuyển ra nước ngoài trong 60 ngày kể từ lần chuyển đầu (và cập nhật khi có thay đổi). <em>Mốc/biểu mẫu cụ thể tra cứu văn bản gốc.</em></p>
     </div>
     <div class="box tpl">
       <div class="h">📋 Template DPIA — khung điền sẵn (dữ liệu giả) <button class="btn btn-ghost" style="padding:5px 12px;font-size:13px;margin-left:8px" data-csv="dpia">⬇ Tải .CSV</button></div>
@@ -1690,8 +1753,45 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       </div>
     </div>
 
+    <h3>26.1 PIA vs DPIA — khác gì?</h3>
+    <div class="twocol">
+      <div class="card">
+        <h4>PIA — Privacy Impact Assessment</h4>
+        <p>Đánh giá tác động riêng tư <em>rộng &amp; sớm</em> — thường làm ở giai đoạn ý tưởng/thiết kế để sàng lọc rủi ro riêng tư của một sáng kiến. Mang tính <strong>nội bộ, chủ động</strong>.</p>
+      </div>
+      <div class="card">
+        <h4>DPIA — Data Protection Impact Assessment</h4>
+        <p>Đánh giá <em>chính thức theo luật</em> cho hoạt động xử lý rủi ro cao; có <strong>nghĩa vụ pháp lý</strong> (lập hồ sơ, nộp trong 60 ngày). Nhiều nơi dùng PIA như bước sàng lọc → nếu rủi ro cao thì làm DPIA đầy đủ.</p>
+      </div>
+    </div>
+    <h3>26.2 Khi nào phải làm LẠI assessment? (câu hỏi muôn thuở)</h3>
+    <div class="box faq">
+      <div class="h">❓ Tình huống thật: "Hệ thống này đã làm assessment (OneTrust) rồi, giờ mở rộng / dùng cho affiliate khác — có cần làm lại không?"</div>
+      <p><strong>Trả lời: CÓ — assessment gắn với một <em>phạm vi xử lý cụ thể</em>, không phải gắn vĩnh viễn với "hệ thống".</strong> Khi phạm vi/bối cảnh đổi, rủi ro đổi → phải <strong>cập nhật/làm lại</strong>. Hãy rà các "trigger" sau:</p>
+    </div>
+    <div class="box tpl">
+      <div class="h">📋 Checklist: trigger làm lại DPIA/PIA <button class="btn btn-ghost" style="padding:5px 12px;font-size:13px;margin-left:8px" data-csv="reassess">⬇ Tải .CSV</button></div>
+      <div class="tablewrap">
+        <table id="tpl-reassess">
+          <tr><th>Trigger</th><th>Ví dụ</th><th>Cần làm lại?</th></tr>
+          <tr><td><strong>Mở rộng phạm vi (scope)</strong></td><td>Thêm chức năng, thêm loại dữ liệu, tăng quy mô lớn</td><td>Có</td></tr>
+          <tr><td><strong>Thêm mục đích mới</strong></td><td>Dữ liệu thu cho A nay dùng thêm cho B</td><td>Có</td></tr>
+          <tr><td><strong>Thêm bên nhận / affiliate</strong></td><td>Dùng chung hệ thống cho công ty con/đối tác mới</td><td>Có (chia sẻ cho pháp nhân khác = xử lý mới)</td></tr>
+          <tr><td><strong>Thêm/đổi nhà thầu phụ</strong></td><td>Đổi nhà cung cấp cloud/đối tác xử lý</td><td>Có</td></tr>
+          <tr><td><strong>Phát sinh chuyển xuyên biên giới</strong></td><td>Chuyển sang region nước ngoài</td><td>Có (+ hồ sơ chuyển ra nước ngoài)</td></tr>
+          <tr><td><strong>Công nghệ mới</strong></td><td>Thêm AI/quyết định tự động/sinh trắc học</td><td>Có</td></tr>
+          <tr><td><strong>Thay đổi lớn về dữ liệu nhạy cảm</strong></td><td>Bắt đầu xử lý dữ liệu nhạy cảm</td><td>Có</td></tr>
+          <tr><td><strong>Rà soát định kỳ</strong></td><td>Không có thay đổi nhưng đã lâu</td><td>Nên rà lại theo chu kỳ (vd hằng năm)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="box key">
+      <div class="h">🔑 Mẹo trả lời IT</div>
+      <p>Khi IT hỏi "đổi/mở rộng cái này có cần assess lại không?", đừng trả lời cảm tính. Mở checklist trên: nếu trúng <em>bất kỳ</em> trigger nào → cập nhật assessment (và ROPA). Đây chính là cách biến câu hỏi mơ hồ thành quy tắc rõ ràng.</p>
+    </div>
+
     <!-- ====================== DSAR ====================== -->
-    <h2 class="anchor" id="dsar">26. Quyền của chủ thể dữ liệu (DSAR) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="dsar">27. Quyền của chủ thể dữ liệu (DSAR) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~15 phút · Khách hàng có quyền gì với dữ liệu của họ</p>
     <p><strong>Chủ thể dữ liệu (data subject)</strong> — tức khách hàng/nhân viên — có một loạt quyền mà ngân hàng phải đáp ứng.</p>
     <div class="box def">
@@ -1724,8 +1824,35 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       <p>Xử lý dữ liệu cá nhân của <strong>trẻ em/người chưa thành niên</strong> có yêu cầu chặt hơn (vd cần sự đồng ý của cha mẹ/người giám hộ, xác minh tuổi). Nếu ngân hàng có sản phẩm cho nhóm dưới 18 tuổi, đây là điểm DPIA &amp; kiểm soát đặc biệt. <em>Tra cứu điều kiện cụ thể theo luật hiện hành.</em></p>
     </div>
 
+    <h3>27.1 Quy trình xử lý một yêu cầu (DSAR) — 7 bước</h3>
+    <ol class="steps">
+      <li><strong>Tiếp nhận &amp; ghi nhận.</strong> Vào sổ ngay: ai yêu cầu, kênh nào, ngày giờ, nội dung. Bắt đầu đếm thời hạn.</li>
+      <li><strong>Xác minh danh tính.</strong> Đảm bảo người yêu cầu đúng là chủ thể (hoặc người đại diện hợp pháp) — tránh lộ dữ liệu cho kẻ mạo danh. Yêu cầu xác minh ở mức tương xứng, không đòi quá mức.</li>
+      <li><strong>Phân loại yêu cầu &amp; kiểm tính hợp lệ.</strong> Quyền gì (truy cập/sửa/xóa/rút đồng ý/phản đối…)? Có thuộc phạm vi luật không? Có rõ ràng không (nếu mơ hồ → hỏi lại)?</li>
+      <li><strong>Tìm dữ liệu ở MỌI nơi.</strong> Dùng <a href="#s10">data inventory</a> + <a href="#s12">data mapping</a> (+ <a href="#sql">SQL</a>) để gom dữ liệu của chủ thể: core, CRM, kho ảnh, kho dữ liệu, backup, và <em>ở đối tác</em>.</li>
+      <li><strong>Rà ngoại lệ &amp; nghĩa vụ giữ.</strong> Có phần phải GIỮ theo luật (AML, lưu trữ chứng từ)? Có ảnh hưởng quyền người khác? → quyết định phần nào đáp ứng, phần nào từ chối (có lý do).</li>
+      <li><strong>Phản hồi đúng hạn.</strong> Trả lời trong thời hạn luật định bằng văn bản rõ ràng; nếu từ chối một phần, nêu căn cứ. (Tra cứu thời hạn cụ thể theo PDPL/NĐ356.)</li>
+      <li><strong>Lưu hồ sơ.</strong> Lưu toàn bộ: yêu cầu, xác minh, những gì đã làm, quyết định &amp; lý do — để chứng minh tuân thủ (accountability).</li>
+    </ol>
+    <div class="box tpl">
+      <div class="h">📋 Checklist tiếp nhận &amp; xử lý DSAR <button class="btn btn-ghost" style="padding:5px 12px;font-size:13px;margin-left:8px" data-csv="dsar">⬇ Tải .CSV</button></div>
+      <div class="tablewrap">
+        <table id="tpl-dsar">
+          <tr><th>Mục</th><th>Nội dung ghi nhận</th></tr>
+          <tr><td>Mã yêu cầu / ngày nhận / hạn trả lời</td><td>…</td></tr>
+          <tr><td>Người yêu cầu &amp; kênh</td><td>…</td></tr>
+          <tr><td>Đã xác minh danh tính? (cách)</td><td>☐</td></tr>
+          <tr><td>Loại quyền yêu cầu</td><td>Truy cập / Sửa / Xóa / Rút đồng ý / Phản đối / Khác</td></tr>
+          <tr><td>Hệ thống đã tìm dữ liệu</td><td>Core ☐ CRM ☐ Kho ảnh ☐ Backup ☐ Đối tác ☐</td></tr>
+          <tr><td>Có nghĩa vụ giữ/ngoại lệ? (căn cứ)</td><td>…</td></tr>
+          <tr><td>Quyết định &amp; nội dung phản hồi</td><td>…</td></tr>
+          <tr><td>Ngày phản hồi · người duyệt · nơi lưu hồ sơ</td><td>…</td></tr>
+        </table>
+      </div>
+    </div>
+
     <!-- ====================== THIRD PARTY ====================== -->
-    <h2 class="anchor" id="thirdparty">27. Quản lý bên thứ ba / nhà cung cấp <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="thirdparty">28. Quản lý bên thứ ba / nhà cung cấp <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~12 phút · Dữ liệu của bạn nằm trong tay người khác</p>
     <p>Ngân hàng hiếm khi tự làm mọi thứ — họ thuê đối tác xử lý dữ liệu: nhà cung cấp eKYC, tổng đài thuê ngoài, cloud, công ty chấm điểm tín dụng. Hai vai trò cần phân biệt:</p>
     <div class="twocol">
@@ -1752,8 +1879,31 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       <p>Khi bạn thuê ngoài việc xử lý, bạn <em>không</em> thuê ngoài được <strong>trách nhiệm</strong>. Nếu đối tác làm lộ dữ liệu khách hàng, ngân hàng (controller) vẫn chịu trách nhiệm trước pháp luật &amp; khách hàng.</p>
     </div>
 
+    <h3>28.1 DPA — Hợp đồng xử lý dữ liệu cần những điều khoản gì?</h3>
+    <p><strong>DPA (Data Processing Agreement — Hợp đồng/Thỏa thuận xử lý dữ liệu)</strong> là văn bản ràng buộc giữa <em>Bên kiểm soát</em> (bạn) và <em>Bên xử lý</em> (đối tác). Đây là "tấm khiên pháp lý" — thiếu điều khoản nào là hở rủi ro đó. Các điều khoản cốt lõi &amp; <strong>vì sao</strong>:</p>
+    <div class="box tpl">
+      <div class="h">📋 Checklist điều khoản DPA <button class="btn btn-ghost" style="padding:5px 12px;font-size:13px;margin-left:8px" data-csv="dpa">⬇ Tải .CSV</button></div>
+      <div class="tablewrap">
+        <table id="tpl-dpa">
+          <tr><th>Điều khoản</th><th>Nội dung</th><th>Vì sao quan trọng</th></tr>
+          <tr><td><strong>Đối tượng &amp; thời hạn</strong></td><td>Xử lý gì, trong bao lâu</td><td>Giới hạn phạm vi &amp; vòng đời</td></tr>
+          <tr><td><strong>Mục đích &amp; phạm vi</strong></td><td>Chỉ xử lý cho mục đích đã thỏa thuận</td><td>Chống dùng sai mục đích (đối tác bán/tái sử dụng dữ liệu)</td></tr>
+          <tr><td><strong>Loại dữ liệu &amp; nhóm chủ thể</strong></td><td>Liệt kê rõ trường dữ liệu, ai</td><td>Biết mức nhạy cảm để áp kiểm soát đúng</td></tr>
+          <tr><td><strong>Xử lý theo chỉ dẫn</strong></td><td>Đối tác chỉ làm theo chỉ dẫn bằng văn bản của bạn</td><td>Giữ bạn là người "cầm lái" (controller)</td></tr>
+          <tr><td><strong>Bảo mật (biện pháp KT&amp;TC)</strong></td><td>Mã hóa, phân quyền, log… ở mức "phù hợp"</td><td>Nghĩa vụ bảo mật bắt buộc theo luật</td></tr>
+          <tr><td><strong>Bảo mật thông tin (NDA)</strong></td><td>Nhân sự đối tác cam kết giữ bí mật</td><td>Giảm rủi ro nội bộ</td></tr>
+          <tr><td><strong>Nhà thầu phụ (sub-processor)</strong></td><td>Phải xin phép + áp nghĩa vụ tương đương (flow-down)</td><td>Tránh "rò" dữ liệu qua chuỗi nhà thầu</td></tr>
+          <tr><td><strong>Hỗ trợ quyền chủ thể</strong></td><td>Đối tác hỗ trợ bạn xử lý DSAR</td><td>Bạn vẫn phải đáp ứng quyền khách hàng đúng hạn</td></tr>
+          <tr><td><strong>Hỗ trợ DPIA &amp; thông báo sự cố</strong></td><td>Báo sự cố cho bạn <em>không chậm trễ</em></td><td>Để bạn kịp thông báo cơ quan/khách trong hạn luật</td></tr>
+          <tr><td><strong>Quyền kiểm tra (audit)</strong></td><td>Bạn được audit hoặc nhận báo cáo (SOC/ISO)</td><td>Có cơ sở giám sát thực tế</td></tr>
+          <tr><td><strong>Trả/xóa dữ liệu khi kết thúc</strong></td><td>Trả lại hoặc xóa &amp; xác nhận</td><td>Không để dữ liệu "ở lại" sau hợp đồng</td></tr>
+          <tr><td><strong>Chuyển xuyên biên giới</strong></td><td>Nêu rõ nơi lưu/xử lý, điều kiện chuyển</td><td>Kích hoạt nghĩa vụ hồ sơ chuyển ra nước ngoài</td></tr>
+        </table>
+      </div>
+    </div>
+
     <!-- ====================== BREACH ====================== -->
-    <h2 class="anchor" id="breach">28. Sự cố lộ lọt dữ liệu (data breach) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="breach">29. Sự cố lộ lọt dữ liệu (data breach) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~15 phút · Khi chuyện xấu xảy ra — phản ứng thế nào</p>
     <div class="box def">
       <div class="h">📖 Định nghĩa</div>
@@ -1773,21 +1923,80 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       <p>Pháp luật Việt Nam quy định nghĩa vụ <strong>thông báo vi phạm dữ liệu cá nhân</strong> cho cơ quan có thẩm quyền (và trong nhiều trường hợp cả chủ thể dữ liệu) trong một <strong>khung thời gian nhất định</strong> kể từ khi phát hiện. Đầu mối là cơ quan chuyên trách bảo vệ DLCN thuộc <strong>Bộ Công an (Cục A05)</strong>; với ngân hàng còn có nghĩa vụ báo cáo <strong>NHNN/SBV</strong> theo quy định an toàn HTTT. Pháp luật VN cũng yêu cầu thông báo <strong>cấp tốc</strong> (tham khảo mốc <strong>72 giờ</strong> kể từ khi phát hiện — tương đồng GDPR; con số &amp; ngoại lệ cụ thể của VN <em>phải tra cứu trong văn bản hiện hành</em>). <em>Phối hợp Pháp chế để chốt thời hạn &amp; mẫu thông báo.</em> Chuẩn bị sẵn quy trình &amp; mẫu <em>trước</em> khi sự cố xảy ra là việc của privacy.</p>
     </div>
 
+    <h3>29.1 Phân loại mức độ &amp; cây quyết định "có phải thông báo không"</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Mức</th><th>Dấu hiệu</th><th>Hành động nhanh</th></tr>
+        <tr><td><span class="chip pub">Thấp</span></td><td>Suýt lộ / lộ nội bộ, đã kiểm soát, không ảnh hưởng chủ thể</td><td>Ghi nhận, khắc phục, theo dõi</td></tr>
+        <tr><td><span class="chip int">Trung bình</span></td><td>Lộ dữ liệu cơ bản số lượng vừa; rủi ro hạn chế</td><td>Kích hoạt ứng phó, đánh giá thông báo</td></tr>
+        <tr><td><span class="chip pii">Cao</span></td><td>Lộ dữ liệu <strong>nhạy cảm</strong> (tài chính, sinh trắc…) / quy mô lớn / nguy cơ thiệt hại cho khách</td><td>Escalate ngay; nhiều khả năng PHẢI thông báo cơ quan + chủ thể</td></tr>
+      </table>
+    </div>
+    <p style="font-size:14.5px"><strong>Cây quyết định rút gọn:</strong> Có dữ liệu cá nhân bị truy cập/lộ/mất trái phép? → <em>Có</em> → Đánh giá nguy cơ tới quyền &amp; lợi ích chủ thể → <em>Có nguy cơ</em> → <strong>Thông báo cơ quan có thẩm quyền</strong> (và chủ thể nếu nguy cơ cao) trong thời hạn luật định. <em>Khi phân vân → coi như phải thông báo &amp; hỏi Pháp chế.</em></p>
+
+    <h3>29.2 Ma trận ESCALATION — ai báo ai, khi nào</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Thời điểm</th><th>Người phát hiện → báo</th><th>Vai trò vào cuộc</th></tr>
+        <tr><td>Ngay khi nghi ngờ (phút đầu)</td><td>Nhân viên → Quản lý trực tiếp + <strong>DPO</strong> + <strong>An ninh TT (CISO/SOC)</strong></td><td>Ghi nhận, ngăn chặn sơ bộ</td></tr>
+        <tr><td>Trong vài giờ đầu</td><td>DPO + CISO → <strong>Pháp chế</strong> + chủ sở hữu hệ thống</td><td>Đánh giá phạm vi &amp; mức độ; quyết định escalate</td></tr>
+        <tr><td>Khi xác định mức Cao</td><td>DPO/CISO → <strong>Ban lãnh đạo</strong> (controller)</td><td>Quyết định thông báo cơ quan/khách</td></tr>
+        <tr><td>Theo thời hạn luật</td><td><strong>DPO</strong> (đầu mối) → <strong>Cơ quan chuyên trách (A05)</strong>; ngân hàng → <strong>NHNN/SBV</strong></td><td>Nộp thông báo + hồ sơ</td></tr>
+        <tr><td>Sau xử lý</td><td>Toàn đội → họp rút kinh nghiệm</td><td>Cập nhật biện pháp, lưu hồ sơ sự cố</td></tr>
+      </table>
+    </div>
+    <div class="box tpl">
+      <div class="h">📋 Runbook ứng phó sự cố (điền nhanh khi "cháy nhà") <button class="btn btn-ghost" style="padding:5px 12px;font-size:13px;margin-left:8px" data-csv="incident">⬇ Tải .CSV</button></div>
+      <div class="tablewrap">
+        <table id="tpl-incident">
+          <tr><th>Mục</th><th>Ghi nhận</th></tr>
+          <tr><td>Thời điểm phát hiện · người báo</td><td>…</td></tr>
+          <tr><td>Mô tả sự cố · hệ thống liên quan</td><td>…</td></tr>
+          <tr><td>Dữ liệu bị ảnh hưởng (loại · có nhạy cảm? · số lượng)</td><td>…</td></tr>
+          <tr><td>Hành động ngăn chặn đã làm</td><td>…</td></tr>
+          <tr><td>Mức độ (Thấp/TB/Cao) · căn cứ</td><td>…</td></tr>
+          <tr><td>Đã escalate cho ai · lúc nào</td><td>DPO ☐ CISO ☐ Pháp chế ☐ BLĐ ☐</td></tr>
+          <tr><td>Cần thông báo? (cơ quan ☐ chủ thể ☐) · hạn</td><td>…</td></tr>
+          <tr><td>Khắc phục · phòng ngừa tái diễn · nơi lưu hồ sơ</td><td>…</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="box key">
+      <div class="h">🔑 3 "tips mang về" về sự cố</div>
+      <ul style="margin:.2em 0">
+        <li><strong>Chuẩn bị TRƯỚC:</strong> in sẵn runbook + danh bạ escalation + mẫu thông báo. Lúc sự cố không ai bình tĩnh đi soạn.</li>
+        <li><strong>Đồng hồ chạy từ lúc PHÁT HIỆN</strong>, không phải lúc xác minh xong → ghi nhận thời điểm ngay.</li>
+        <li><strong>Đừng tự quyết "không cần báo".</strong> Khi phân vân, escalate &amp; hỏi Pháp chế — phạt do chậm/không thông báo rất nặng.</li>
+      </ul>
+    </div>
+
     <!-- ====================== LEGAL VN ====================== -->
-    <h2 class="anchor" id="legalvn">29. Khung pháp lý Việt Nam <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="legalvn">30. Khung pháp lý Việt Nam <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~18 phút · Bản đồ các luật bạn cần biết (mức tổng quan)</p>
     <p>Privacy ở ngân hàng Việt Nam chịu sự điều chỉnh của nhiều văn bản. Bảng dưới là <strong>bản đồ tổng quan</strong> — không phải tư vấn pháp lý; số hiệu &amp; điều khoản cần tra cứu bản gốc hiện hành.</p>
     <div class="tablewrap">
       <table>
         <tr><th>Văn bản</th><th>Phạm vi</th><th>Liên quan privacy thế nào</th></tr>
-        <tr><td><strong>Luật Bảo vệ Dữ liệu Cá nhân (PDPL)</strong> — hiệu lực 01/01/2026</td><td>Văn bản cấp <em>luật</em>, cao nhất về bảo vệ DLCN</td><td><strong>Khung nền tảng hiện hành:</strong> nguyên tắc, căn cứ xử lý, quyền chủ thể, đánh giá tác động, chuyển dữ liệu ra nước ngoài, chế tài. <em>(Tra cứu số hiệu &amp; điều khoản bản gốc.)</em></td></tr>
-        <tr><td><strong>Nghị định 13/2023/NĐ-CP</strong> (PDPD)</td><td>Văn bản <em>dưới luật</em> về bảo vệ DLCN</td><td>Văn bản nền móng đầu tiên (từ 2023); cụ thể hóa nhiều nội dung, áp dụng song song với Luật theo hướng dẫn hiện hành.</td></tr>
+        <tr><td><strong>★ Luật Bảo vệ Dữ liệu Cá nhân (PDPL)</strong><br>Luật số 91/2025/QH15 · hiệu lực <strong>01/01/2026</strong></td><td>Văn bản cấp <em>luật</em>, cao nhất về bảo vệ DLCN</td><td><strong>Khung nền tảng HIỆN HÀNH:</strong> nguyên tắc, căn cứ xử lý, quyền chủ thể, đánh giá tác động, chuyển dữ liệu ra nước ngoài, chế tài. <em>(Tra cứu điều khoản bản gốc.)</em></td></tr>
+        <tr><td><strong>Nghị định 356/2025/NĐ-CP</strong><br>hiệu lực 01/01/2026</td><td>Nghị định hướng dẫn PDPL</td><td>Cụ thể hóa PDPL (điều kiện DPO, quy trình DPIA/chuyển dữ liệu…) &amp; <strong>chính thức thay thế NĐ 13/2023</strong>.</td></tr>
+        <tr><td>Nghị định 13/2023/NĐ-CP <em>(lịch sử)</em></td><td>NĐ bảo vệ DLCN đầu tiên (2023)</td><td>⚠️ <strong>Đã được thay thế</strong> bởi NĐ 356/2025 từ 01/01/2026. Hồ sơ đã nộp trước mốc này vẫn dùng tiếp, nhưng cập nhật phải theo luật mới.</td></tr>
+        <tr><td><strong>Luật Dữ liệu</strong><br>Luật số 60/2024/QH15 · hiệu lực 01/07/2025</td><td>Quản trị <em>dữ liệu nói chung</em> (dữ liệu quốc gia, trung tâm dữ liệu, sản phẩm/dịch vụ dữ liệu)</td><td>KHÁC Luật BVDLCN — đây là luật về dữ liệu nói chung, không phải chuyên về dữ liệu cá nhân. Đừng nhầm hai luật.</td></tr>
         <tr><td><strong>Luật An ninh mạng</strong> &amp; nghị định hướng dẫn</td><td>An ninh không gian mạng</td><td>Yêu cầu liên quan lưu trữ dữ liệu, bảo vệ hệ thống thông tin.</td></tr>
         <tr><td><strong>Luật An toàn thông tin mạng</strong></td><td>An toàn thông tin</td><td>Bảo vệ thông tin cá nhân trên mạng, phân loại hệ thống thông tin theo cấp độ.</td></tr>
         <tr><td><strong>Luật Giao dịch điện tử</strong></td><td>Giao dịch điện tử</td><td>Liên quan eKYC, chữ ký số, dữ liệu điện tử.</td></tr>
         <tr><td><strong>Quy định của SBV/NHNN</strong> (vd Thông tư về an toàn HTTT ngân hàng)</td><td>Ngành ngân hàng</td><td>Yêu cầu riêng về an toàn hệ thống, bảo mật, bảo vệ thông tin khách hàng.</td></tr>
-        <tr><td><strong>Luật liên quan đến AI (2025)</strong></td><td>Trí tuệ nhân tạo</td><td>Khi dùng AI xử lý dữ liệu cá nhân (chấm điểm, sinh trắc học) — cần lưu ý nghĩa vụ minh bạch &amp; quản trị rủi ro. <em>Tra cứu văn bản hiện hành.</em></td></tr>
+        <tr><td><strong>Khung pháp lý về AI</strong> của Việt Nam</td><td>Trí tuệ nhân tạo</td><td>Khi dùng AI xử lý dữ liệu cá nhân (chấm điểm, sinh trắc học) — lưu ý nghĩa vụ minh bạch &amp; quản trị rủi ro. <em>Tra cứu văn bản hiện hành.</em></td></tr>
       </table>
+    </div>
+    <div class="box law">
+      <div class="h">🆕 5 điểm mới của PDPL 2026 mà DPO PHẢI nhớ</div>
+      <ul style="margin:.2em 0">
+        <li><strong>Bổ nhiệm DPO là BẮT BUỘC</strong> với (gần như) mọi tổ chức xử lý dữ liệu cá nhân — không còn giới hạn vài trường hợp như NĐ13. Điều kiện DPO (theo NĐ356): bằng cao đẳng trở lên + ≥ 2 năm kinh nghiệm pháp lý / IT / an ninh mạng.</li>
+        <li><strong>Đồng ý phải MINH THỊ &amp; xác minh được</strong> — cấm đồng ý ngầm (implied) và cơ chế opt-out.</li>
+        <li><strong>Dữ liệu tài chính = dữ liệu nhạy cảm</strong> (cùng nhóm sinh trắc học, sức khỏe…) → ngân hàng xử lý nhiều dữ liệu nhạy cảm theo mặc định.</li>
+        <li><strong>Mốc 60 ngày:</strong> nộp hồ sơ <strong>DPIA</strong> trong 60 ngày kể từ khi bắt đầu xử lý; hồ sơ <strong>chuyển dữ liệu ra nước ngoài</strong> trong 60 ngày kể từ lần chuyển đầu.</li>
+        <li><strong>Chế tài mạnh:</strong> phạt tới <strong>5% doanh thu năm trước</strong> với vi phạm chuyển dữ liệu xuyên biên giới; các vi phạm khác phạt tối đa tới mức tỷ đồng. <em>(Con số cụ thể tra cứu bản gốc.)</em></li>
+      </ul>
     </div>
     <div class="box law">
       <div class="h">🏦 Hai hồ sơ &amp; đầu mối cơ quan quản lý — DPO bắt buộc nắm</div>
@@ -1801,6 +2010,73 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     <div class="box warn">
       <div class="h">⚠️ Miễn trừ</div>
       <p>Mục này chỉ nhằm giúp bạn <em>định hướng</em>. Mọi quyết định tuân thủ phải dựa trên văn bản pháp luật hiện hành &amp; ý kiến của bộ phận Pháp chế. Đừng trích dẫn số điều khoản từ trí nhớ.</p>
+    </div>
+
+    <!-- ====================== INTAKE ====================== -->
+    <h2 class="anchor" id="intake">31. Khung tiếp nhận &amp; đánh giá yêu cầu ★ <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <p class="lesson-meta">⏱ ~20 phút · Bài "ghép tất cả lại" — nhận 1 yêu cầu thì đánh giá thế nào cho ĐỦ</p>
+    <blockquote>Pain point lớn nhất của DPO: <em>"Nhận một request/hệ thống mới, mình cần đánh giá những tiêu chí gì? Đã đủ chưa?"</em> Bài này cho bạn một <strong>quy trình tiếp nhận chuẩn (intake)</strong> + checklist để không bao giờ bỏ sót.</blockquote>
+
+    <h3>31.1 Bước 1 — Bộ câu hỏi sàng lọc (triage) khi nhận yêu cầu</h3>
+    <p>Với <em>bất kỳ</em> dự án/hệ thống/thay đổi nào đụng tới dữ liệu, hỏi đủ 8 nhóm sau (chính là "nguyên liệu" cho mọi đánh giá sau):</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>#</th><th>Câu hỏi</th><th>Để làm gì</th></tr>
+        <tr><td>1</td><td><strong>Dữ liệu gì?</strong> Có dữ liệu cá nhân? Có <strong>nhạy cảm</strong> (tài chính/sinh trắc/sức khỏe…)?</td><td>Quyết mức bảo vệ &amp; có cần DPIA</td></tr>
+        <tr><td>2</td><td><strong>Mục đích?</strong> Dùng để làm gì, có chính đáng &amp; cụ thể không?</td><td>Giới hạn mục đích</td></tr>
+        <tr><td>3</td><td><strong>Căn cứ pháp lý?</strong> Đồng ý / hợp đồng / nghĩa vụ pháp lý…?</td><td>Hợp pháp hóa việc xử lý</td></tr>
+        <tr><td>4</td><td><strong>Ai xử lý?</strong> Nội bộ hay <strong>bên thứ ba</strong>/affiliate? Có sub-processor?</td><td>Kích hoạt DPA, thẩm định</td></tr>
+        <tr><td>5</td><td><strong>Lưu ở đâu?</strong> Hệ thống nào, cloud/region nào, có rời VN?</td><td>Kích hoạt hồ sơ chuyển xuyên biên giới</td></tr>
+        <tr><td>6</td><td><strong>Lưu bao lâu?</strong> Thời hạn &amp; cách xóa?</td><td>Giới hạn lưu trữ</td></tr>
+        <tr><td>7</td><td><strong>Công nghệ?</strong> Có AI/quyết định tự động/giám sát quy mô lớn?</td><td>Rủi ro cao → DPIA</td></tr>
+        <tr><td>8</td><td><strong>Quy mô?</strong> Bao nhiêu chủ thể, tần suất?</td><td>Đánh giá mức rủi ro</td></tr>
+      </table>
+    </div>
+
+    <h3>31.2 Bước 2 — Cây quyết định: từ câu trả lời → việc phải làm</h3>
+    <div class="flow">
+      <div class="fnode"><span class="ficon">📥</span><span class="flabel">Nhận yêu cầu</span><span class="fsub">8 câu triage</span></div>
+      <div class="farrow"><span class="dot"></span></div>
+      <div class="fnode store"><span class="ficon">🧮</span><span class="flabel">Xác định</span><span class="fsub">DLCN? nhạy cảm? rủi ro?</span></div>
+      <div class="farrow"><span class="dot"></span></div>
+      <div class="fnode"><span class="ficon">📋</span><span class="flabel">Kích hoạt</span><span class="fsub">DPIA / DPA / TIA / ROPA</span></div>
+      <div class="farrow"><span class="dot"></span></div>
+      <div class="fnode"><span class="ficon">✅</span><span class="flabel">Kết luận</span><span class="fsub">duyệt / điều kiện / từ chối</span></div>
+    </div>
+    <ul>
+      <li>Có dữ liệu nhạy cảm / AI / quy mô lớn / giám sát? → <strong>làm <a href="#dpia">DPIA</a></strong> (nộp trong 60 ngày).</li>
+      <li>Dữ liệu rời VN? → <strong>hồ sơ chuyển ra nước ngoài (TIA)</strong> (60 ngày).</li>
+      <li>Có bên thứ ba/affiliate xử lý? → <strong>ký <a href="#thirdparty">DPA</a></strong> + thẩm định (checklist ISO/SOC).</li>
+      <li>Bất kể gì → <strong>cập nhật <a href="#s12">ROPA</a></strong> &amp; <a href="#s11">phân loại</a>.</li>
+      <li>Đã từng đánh giá rồi mà nay đổi/mở rộng? → xem <a href="#dpia">trigger làm lại assessment</a>.</li>
+    </ul>
+
+    <h3>31.3 Bước 3 — Checklist "đã đánh giá ĐỦ chưa?"</h3>
+    <p>Đây là công cụ trả lời thẳng nỗi lo "mình đánh giá đủ chưa". Tick hết = đủ cơ sở kết luận. Tải về dùng cho mỗi yêu cầu:</p>
+    <div class="box tpl">
+      <div class="h">📋 Checklist tiếp nhận &amp; đánh giá yêu cầu privacy <button class="btn btn-ghost" style="padding:5px 12px;font-size:13px;margin-left:8px" data-csv="intake">⬇ Tải .CSV</button></div>
+      <div class="tablewrap">
+        <table id="tpl-intake">
+          <tr><th>Hạng mục</th><th>Đã rõ?</th></tr>
+          <tr><td>Đã liệt kê loại dữ liệu &amp; đánh dấu dữ liệu nhạy cảm</td><td>☐</td></tr>
+          <tr><td>Đã xác định mục đích cụ thể, chính đáng</td><td>☐</td></tr>
+          <tr><td>Đã gán căn cứ pháp lý cho từng mục đích</td><td>☐</td></tr>
+          <tr><td>Đã xác định bên xử lý / bên thứ ba / affiliate</td><td>☐</td></tr>
+          <tr><td>Đã biết nơi lưu (hệ thống/cloud/region) &amp; cross-border?</td><td>☐</td></tr>
+          <tr><td>Đã có thời hạn lưu &amp; cách xóa</td><td>☐</td></tr>
+          <tr><td>Đã xét công nghệ rủi ro cao (AI/tự động/giám sát)</td><td>☐</td></tr>
+          <tr><td>Đã quyết: có cần DPIA?</td><td>☐</td></tr>
+          <tr><td>Đã quyết: có cần hồ sơ chuyển ra nước ngoài (TIA)?</td><td>☐</td></tr>
+          <tr><td>Đã quyết: có cần ký/ cập nhật DPA?</td><td>☐</td></tr>
+          <tr><td>Đã cập nhật ROPA &amp; phân loại dữ liệu</td><td>☐</td></tr>
+          <tr><td>Đã ghi biện pháp bảo vệ yêu cầu (mã hóa, phân quyền, log)</td><td>☐</td></tr>
+          <tr><td>Đã có kết luận &amp; người phê duyệt</td><td>☐</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="box faq">
+      <div class="h">❓ Liên hệ công cụ kiểu OneTrust</div>
+      <p>Các nền tảng quản trị privacy (vd OneTrust) số hóa đúng quy trình này: phiếu intake → đánh giá → tự gợi ý "cần DPIA/TIA/DPA không". Hiểu khung tay ở đây giúp bạn dùng công cụ <em>có đầu óc</em> chứ không bấm bừa — và biết khi nào cần đánh giá lại.</p>
     </div>
 
     <!-- ====================== BÀI TẬP M3 ====================== -->
@@ -1830,7 +2106,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== BI ====================== -->
-    <h2 class="anchor" id="bi">30. Phân tích &amp; trực quan hóa dữ liệu (BI) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="bi">32. Phân tích &amp; trực quan hóa dữ liệu (BI) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~12 phút · Biến dữ liệu thành quyết định</p>
     <p><strong>BI (Business Intelligence)</strong> là việc dùng dữ liệu để hỗ trợ ra quyết định, thường qua báo cáo &amp; dashboard. Vài khái niệm để bạn nói chuyện với đội phân tích:</p>
     <div class="tablewrap">
@@ -1849,7 +2125,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== AI ====================== -->
-    <h2 class="anchor" id="ai">31. AI, dữ liệu lớn &amp; privacy <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="ai">33. AI, dữ liệu lớn &amp; privacy <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~15 phút · Công nghệ mới, rủi ro mới</p>
     <p>Ngân hàng ngày càng dùng <strong>AI/Machine Learning</strong> và <strong>Big Data</strong>: chấm điểm tín dụng, phát hiện gian lận, chatbot, gợi ý sản phẩm. Vài khái niệm &amp; rủi ro privacy:</p>
     <div class="tablewrap">
@@ -1877,7 +2153,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== CASE STUDY ====================== -->
-    <h2 class="anchor" id="casestudy">32. Case study tổng hợp <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="casestudy">34. Case study tổng hợp <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~18 phút · Ráp tất cả lại thành một câu chuyện</p>
     <p>Hãy đi qua một tình huống thực tế (dữ liệu giả) để thấy mọi mảnh ghép khớp với nhau thế nào.</p>
     <blockquote>
@@ -1926,14 +2202,18 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== DPO ROLE ====================== -->
-    <h2 class="anchor" id="dpo-role">33. Vai trò Data Protection Officer (deep-dive) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="dpo-role">35. Vai trò Data Protection Officer (deep-dive) <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~30 phút · Chân dung đầy đủ của nghề DPO</p>
     <div class="box def">
       <div class="h">📖 Định nghĩa</div>
       <p><strong>Data Protection Officer (DPO)</strong> — Cán bộ bảo vệ dữ liệu cá nhân — là người (hoặc bộ phận) chịu trách nhiệm <em>giám sát, tư vấn và điều phối</em> việc tuân thủ pháp luật bảo vệ dữ liệu cá nhân trong tổ chức. DPO là <strong>cầu nối</strong> giữa nghiệp vụ, IT, pháp chế, lãnh đạo, cơ quan quản lý và <em>chính khách hàng</em>.</p>
     </div>
+    <div class="box law">
+      <div class="h">🆕 PDPL 2026: bổ nhiệm DPO là BẮT BUỘC</div>
+      <p>Khác Nghị định 13 cũ (chỉ bắt buộc trong vài trường hợp), <strong>Luật BVDLCN (PDPL) yêu cầu (gần như) MỌI tổ chức xử lý dữ liệu cá nhân phải bổ nhiệm DPO</strong> — kể cả dữ liệu cơ bản. Đây là lý do nghề này đang "khát người". <strong>Điều kiện DPO</strong> (theo Nghị định 356/2025): có bằng <strong>cao đẳng trở lên</strong> + <strong>≥ 2 năm kinh nghiệm</strong> ở lĩnh vực liên quan (pháp lý / công nghệ thông tin / an ninh mạng). <em>(Điều kiện &amp; phạm vi miễn trừ cụ thể tra cứu văn bản gốc.)</em> → Rất nhiều người được bổ nhiệm nhưng <em>chưa có nền data literacy</em> — chính là lý do khóa học này tồn tại.</p>
+    </div>
 
-    <h3>33.1 DPO làm gì? — 7 nhóm nhiệm vụ cốt lõi</h3>
+    <h3>35.1 DPO làm gì? — 7 nhóm nhiệm vụ cốt lõi</h3>
     <div class="tablewrap">
       <table>
         <tr><th>Nhóm nhiệm vụ</th><th>Việc cụ thể (gắn với khóa học)</th></tr>
@@ -1947,7 +2227,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       </table>
     </div>
 
-    <h3>33.2 Hai nguyên tắc "bất khả xâm phạm" của vị trí DPO</h3>
+    <h3>35.2 Hai nguyên tắc "bất khả xâm phạm" của vị trí DPO</h3>
     <div class="twocol">
       <div class="card">
         <h4>① Tính độc lập</h4>
@@ -1963,7 +2243,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       <p>DPO <strong>KHÔNG</strong> phải là người "chịu trách nhiệm cuối cùng" về tuân thủ. Trách nhiệm đó thuộc về <strong>bên kiểm soát dữ liệu</strong> — tức tổ chức &amp; ban lãnh đạo (xem <a href="#thirdparty">mục Controller/Processor</a>). DPO <em>tư vấn &amp; giám sát</em>; lãnh đạo <em>chịu trách nhiệm &amp; quyết định</em>. Hiểu đúng điều này là nền tảng của ma trận RACI ở bài kế tiếp.</p>
     </div>
 
-    <h3>33.3 DPO ở ngân hàng — bối cảnh đặc thù Việt Nam</h3>
+    <h3>35.3 DPO ở ngân hàng — bối cảnh đặc thù Việt Nam</h3>
     <ul>
       <li>Khối lượng dữ liệu cá nhân khổng lồ, nhiều dữ liệu <strong>nhạy cảm</strong> (tài chính, sinh trắc học eKYC).</li>
       <li>Chịu <em>nhiều tầng</em> quy định: bảo vệ DLCN + <a href="#legalvn">quy định SBV/NHNN</a> + an ninh mạng.</li>
@@ -1971,7 +2251,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       <li>DPO ngân hàng thường phối hợp chặt với <strong>Tuân thủ (Compliance)</strong>, <strong>An ninh thông tin (CISO)</strong> và <strong>Pháp chế</strong>.</li>
     </ul>
 
-    <h3>33.4 Kỹ năng của một DPO giỏi</h3>
+    <h3>35.4 Kỹ năng của một DPO giỏi</h3>
     <div class="twocol">
       <div class="card">
         <h4>Kỹ năng "cứng" (hard skills)</h4>
@@ -1998,7 +2278,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== RACI ====================== -->
-    <h2 class="anchor" id="raci">34. Ma trận RACI chi tiết cho bảo vệ dữ liệu <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="raci">36. Ma trận RACI chi tiết cho bảo vệ dữ liệu ★ <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~25 phút · "Ai làm gì" — công cụ chống đùn đẩy &amp; bỏ sót</p>
     <div class="box def">
       <div class="h">📖 RACI là gì?</div>
@@ -2057,7 +2337,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </div>
 
     <!-- ====================== DPO ROADMAP ====================== -->
-    <h2 class="anchor" id="dpo-roadmap">35. DPO cần hiểu data tới mức nào? <a class="toplink" href="#intro">↑ đầu trang</a></h2>
+    <h2 class="anchor" id="dpo-roadmap">37. DPO cần hiểu data tới mức nào? <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <p class="lesson-meta">⏱ ~20 phút · Tự đánh giá năng lực &amp; lộ trình phát triển</p>
     <p>Câu hỏi cốt lõi mà khóa học này trả lời: <em>một DPO cần giỏi kỹ thuật đến đâu?</em> Câu trả lời: <strong>đủ để hỏi đúng câu, hiểu câu trả lời, và kiểm chứng được — không cần tự xây hệ thống.</strong> Dưới đây là bản đồ năng lực theo mức.</p>
     <div class="tablewrap">
@@ -2078,7 +2358,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       <p>Một DPO ngân hàng hiệu quả thường dành <strong>~70% năng lực vào pháp lý + quản trị rủi ro</strong> (sân nhà), <strong>~20% vào data literacy</strong> (hiểu dữ liệu &amp; SQL để kiểm chứng), và <strong>~10% vào IT/security</strong> (đủ để đối thoại). Khóa học này trang bị trọn vẹn 20% + 10% đó — phần thường thiếu ở người xuất thân business/pháp lý.</p>
     </div>
 
-    <h3>35.1 Tự đánh giá nhanh — bạn đã sẵn sàng tới đâu?</h3>
+    <h3>37.1 Tự đánh giá nhanh — bạn đã sẵn sàng tới đâu?</h3>
     <ul class="checklist">
       <li>Tôi phân biệt được dữ liệu cá nhân cơ bản &amp; nhạy cảm.</li>
       <li>Tôi đọc hiểu một câu lệnh SQL <code>SELECT … WHERE</code>.</li>
@@ -2091,7 +2371,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
     </ul>
     <div class="tldr"><b>Tick được ≥ 6/8?</b> Bạn đã có nền tảng data literacy của một DPO. Hãy hoàn thành nốt các bài trắc nghiệm để khẳng định.</div>
 
-    <h3>35.2 Lộ trình phát triển sự nghiệp DPO</h3>
+    <h3>37.2 Lộ trình phát triển sự nghiệp DPO</h3>
     <div class="flow">
       <div class="fnode"><span class="ficon">🌱</span><span class="flabel">Nền tảng</span><span class="fsub">Data + Privacy literacy</span></div>
       <div class="farrow"><span class="dot"></span></div>
@@ -2141,7 +2421,7 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
         <div class="title">Data Literacy cho DPO tương lai</div>
         <p>Chứng nhận rằng</p>
         <div class="who" id="cert-fill-name">Học viên</div>
-        <p class="course">đã hoàn thành toàn bộ <strong>5 module · 35 bài học</strong> và vượt qua cả <strong>5 bài trắc nghiệm</strong> của khóa <em>Data Literacy nền tảng cho người làm Privacy</em> (chuẩn DAMA-DMBOK).</p>
+        <p class="course">đã hoàn thành toàn bộ <strong>5 module · 37 bài học</strong> và vượt qua cả <strong>5 bài trắc nghiệm</strong> của khóa <em>Data Literacy nền tảng cho người làm Privacy</em> (chuẩn DAMA-DMBOK).</p>
         <p class="date" id="cert-fill-date">Cấp ngày —</p>
         <p class="sign">Khóa tự học · Chứng nhận mang tính ghi nhận nỗ lực học tập, không phải chứng chỉ hành nghề.</p>
       </div>
@@ -2202,11 +2482,57 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
       </table>
     </div>
 
+    <h3>🔤 Bảng viết tắt (Acronyms) Anh–Việt</h3>
+    <p>Tra nhanh: viết tắt → tên đầy đủ tiếng Anh → tiếng Việt.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Viết tắt</th><th>Tên đầy đủ (English)</th><th>Tiếng Việt</th></tr>
+        <tr><td><strong>PDPL</strong></td><td>Personal Data Protection Law</td><td>Luật Bảo vệ Dữ liệu Cá nhân</td></tr>
+        <tr><td><strong>DLCN</strong></td><td>(personal data)</td><td>Dữ liệu cá nhân</td></tr>
+        <tr><td><strong>DPO</strong></td><td>Data Protection Officer</td><td>Cán bộ bảo vệ dữ liệu cá nhân</td></tr>
+        <tr><td><strong>DAMA-DMBOK</strong></td><td>Data Management Body of Knowledge (DAMA Int'l)</td><td>Cẩm nang kiến thức quản trị dữ liệu</td></tr>
+        <tr><td><strong>DIKW</strong></td><td>Data – Information – Knowledge – Wisdom</td><td>Dữ liệu – Thông tin – Tri thức – Khôn ngoan</td></tr>
+        <tr><td><strong>PII</strong></td><td>Personally Identifiable Information</td><td>Thông tin định danh cá nhân (thuật ngữ Mỹ)</td></tr>
+        <tr><td><strong>SQL</strong></td><td>Structured Query Language</td><td>Ngôn ngữ truy vấn dữ liệu có cấu trúc</td></tr>
+        <tr><td><strong>API</strong></td><td>Application Programming Interface</td><td>Giao diện lập trình ứng dụng</td></tr>
+        <tr><td><strong>ETL / ELT</strong></td><td>Extract–Transform–Load / Extract–Load–Transform</td><td>Rút – biến đổi – nạp dữ liệu</td></tr>
+        <tr><td><strong>IaaS / PaaS / SaaS</strong></td><td>Infrastructure / Platform / Software as a Service</td><td>Thuê hạ tầng / nền tảng / phần mềm</td></tr>
+        <tr><td><strong>CIA</strong></td><td>Confidentiality – Integrity – Availability</td><td>Bảo mật – Toàn vẹn – Sẵn sàng</td></tr>
+        <tr><td><strong>RBAC</strong></td><td>Role-Based Access Control</td><td>Phân quyền theo vai trò</td></tr>
+        <tr><td><strong>MFA / 2FA</strong></td><td>Multi-Factor / Two-Factor Authentication</td><td>Xác thực đa yếu tố</td></tr>
+        <tr><td><strong>DLP</strong></td><td>Data Loss Prevention</td><td>Chống thất thoát dữ liệu</td></tr>
+        <tr><td><strong>SIEM</strong></td><td>Security Information and Event Management</td><td>Quản lý thông tin &amp; sự kiện an ninh</td></tr>
+        <tr><td><strong>IDS / IPS</strong></td><td>Intrusion Detection / Prevention System</td><td>Hệ thống phát hiện / ngăn chặn xâm nhập</td></tr>
+        <tr><td><strong>ITGC</strong></td><td>IT General Controls</td><td>Kiểm soát chung CNTT</td></tr>
+        <tr><td><strong>ITAC</strong></td><td>IT Application Controls</td><td>Kiểm soát ứng dụng</td></tr>
+        <tr><td><strong>SDLC</strong></td><td>Software Development Life Cycle</td><td>Vòng đời phát triển phần mềm</td></tr>
+        <tr><td><strong>ISMS</strong></td><td>Information Security Management System</td><td>Hệ thống quản lý an toàn thông tin</td></tr>
+        <tr><td><strong>PIMS</strong></td><td>Privacy Information Management System</td><td>Hệ thống quản lý thông tin riêng tư</td></tr>
+        <tr><td><strong>SoA</strong></td><td>Statement of Applicability</td><td>Tuyên bố khả năng áp dụng (ISO)</td></tr>
+        <tr><td><strong>SOC 1 / SOC 2 (ISAE 3402)</strong></td><td>Service Organization Control reports</td><td>Báo cáo kiểm soát của bên cung cấp dịch vụ</td></tr>
+        <tr><td><strong>PCI DSS</strong></td><td>Payment Card Industry Data Security Standard</td><td>Chuẩn an toàn dữ liệu thẻ thanh toán</td></tr>
+        <tr><td><strong>ROPA</strong></td><td>Record of Processing Activities</td><td>Hồ sơ các hoạt động xử lý DLCN</td></tr>
+        <tr><td><strong>PIA</strong></td><td>Privacy Impact Assessment</td><td>Đánh giá tác động riêng tư</td></tr>
+        <tr><td><strong>DPIA</strong></td><td>Data Protection Impact Assessment</td><td>Đánh giá tác động bảo vệ DLCN</td></tr>
+        <tr><td><strong>TIA / CTIA</strong></td><td>(Cross-border) Transfer Impact Assessment</td><td>Đánh giá tác động chuyển dữ liệu ra nước ngoài</td></tr>
+        <tr><td><strong>DSAR / DSR</strong></td><td>Data Subject (Access) Request</td><td>Yêu cầu của chủ thể dữ liệu</td></tr>
+        <tr><td><strong>DPA</strong></td><td>Data Processing Agreement</td><td>Hợp đồng/Thỏa thuận xử lý dữ liệu</td></tr>
+        <tr><td><strong>KYC / eKYC</strong></td><td>(electronic) Know Your Customer</td><td>Định danh khách hàng (điện tử)</td></tr>
+        <tr><td><strong>AML</strong></td><td>Anti-Money Laundering</td><td>Phòng chống rửa tiền</td></tr>
+        <tr><td><strong>BIN</strong></td><td>Bank Identification Number</td><td>Mã định danh ngân hàng</td></tr>
+        <tr><td><strong>BI</strong></td><td>Business Intelligence</td><td>Phân tích kinh doanh</td></tr>
+        <tr><td><strong>SBV</strong> (= NHNN)</td><td>State Bank of Vietnam</td><td>Ngân hàng Nhà nước Việt Nam</td></tr>
+        <tr><td><strong>GDPR</strong></td><td>General Data Protection Regulation (EU)</td><td>Quy định bảo vệ dữ liệu chung của EU</td></tr>
+      </table>
+    </div>
+
     <!-- ====================== REFS ====================== -->
     <h2 class="anchor" id="refs">Tài liệu tham khảo <a class="toplink" href="#intro">↑ đầu trang</a></h2>
     <ul>
-      <li><strong>Luật Bảo vệ Dữ liệu Cá nhân (PDPL) — hiệu lực 01/01/2026</strong>: văn bản <em>cấp luật, cao nhất</em> và là khung pháp lý nền tảng hiện hành về bảo vệ dữ liệu cá nhân tại Việt Nam. <em>(Tra cứu số hiệu &amp; điều khoản bản gốc để trích dẫn chính xác.)</em></li>
-      <li><strong>Nghị định 13/2023/NĐ-CP</strong> về bảo vệ dữ liệu cá nhân (PDPD) — văn bản <em>dưới luật</em>, nền móng đầu tiên (2023), cụ thể hóa &amp; áp dụng song song theo hướng dẫn hiện hành.</li>
+      <li><strong>Luật Bảo vệ Dữ liệu Cá nhân (PDPL) — Luật số 91/2025/QH15, hiệu lực 01/01/2026</strong>: văn bản <em>cấp luật, cao nhất</em>, khung pháp lý nền tảng hiện hành về bảo vệ dữ liệu cá nhân tại VN. <em>(Tra cứu điều khoản bản gốc.)</em></li>
+      <li><strong>Nghị định 356/2025/NĐ-CP</strong> — hướng dẫn PDPL (điều kiện DPO, DPIA, chuyển dữ liệu…), <strong>thay thế Nghị định 13/2023/NĐ-CP</strong> từ 01/01/2026.</li>
+      <li><strong>Luật Dữ liệu — Luật số 60/2024/QH15</strong> (hiệu lực 01/07/2025): luật về quản trị dữ liệu nói chung (khác Luật BVDLCN).</li>
+      <li>Nghị định 13/2023/NĐ-CP <em>(lịch sử — đã được thay thế)</em>: nền móng bảo vệ DLCN đầu tiên của VN, hữu ích để hiểu bối cảnh.</li>
       <li><strong>DAMA-DMBOK2</strong> — <em>Data Management Body of Knowledge, 2nd Edition</em>, DAMA International. Khung 11 knowledge areas dùng làm xương sống tài liệu này.</li>
       <li><strong>Luật An ninh mạng</strong> và nghị định hướng dẫn — yêu cầu về an ninh không gian mạng &amp; lưu trữ dữ liệu.</li>
       <li><strong>Luật An toàn thông tin mạng</strong> — bảo vệ thông tin cá nhân trên mạng, phân loại hệ thống thông tin theo cấp độ.</li>
@@ -2434,21 +2760,21 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
         e:"ISO/IEC 27701 là phần mở rộng quyền riêng tư (PIMS) trên nền ISO 27001 — DPO hay viện dẫn & yêu cầu nhà cung cấp."}
     ]},
     quiz3:{title:"Module 3 — Privacy thực chiến", questions:[
-      {q:"Phòng Marketing muốn dùng SĐT khách (vốn thu để xác thực giao dịch) để gửi quảng cáo. Việc này vi phạm nguyên tắc nào?",
-        a:["Tối thiểu hóa dữ liệu","Giới hạn mục đích","Tính chính xác","Tính sẵn sàng"],c:1,
-        e:"Dùng dữ liệu sai mục đích so với lúc thu thập → vi phạm nguyên tắc Giới hạn mục đích."},
-      {q:'Nguyên tắc "chỉ thu thập đúng mức cần thiết" được gọi là gì?',
-        a:["Tối thiểu hóa dữ liệu","Giới hạn lưu trữ","Trách nhiệm giải trình","Minh bạch"],c:0,
-        e:"Tối thiểu hóa dữ liệu (data minimization): không thu nhiều hơn mức cần."},
+      {q:"Nhận một yêu cầu/hệ thống mới, làm sao biết bạn đã đánh giá ĐỦ tiêu chí (không bỏ sót)?",
+        a:["Hỏi cảm tính vài câu rồi duyệt","Chạy qua khung tiếp nhận: dữ liệu/nhạy cảm, mục đích, căn cứ pháp lý, bên thứ ba, nơi lưu/cross-border, thời hạn, công nghệ, quy mô → rồi quyết DPIA/TIA/DPA/ROPA","Chờ đến khi có sự cố rồi tính","Chỉ cần IT bảo OK là được"],c:1,
+        e:"Dùng khung tiếp nhận + checklist 'đã đánh giá đủ chưa' để không bỏ sót và biết cần DPIA/TIA/DPA/cập nhật ROPA hay không."},
+      {q:"Một hệ thống ĐÃ làm assessment (DPIA) rồi; nay mở rộng scope &amp; dùng thêm cho công ty con (affiliate). Có cần đánh giá lại?",
+        a:["Không — đánh giá một lần là xong vĩnh viễn","Có — mở rộng scope / thêm bên nhận là trigger phải làm lại","Chỉ cần khi đổi nhà cung cấp cloud","Để IT tự quyết"],c:1,
+        e:"Assessment gắn với phạm vi xử lý cụ thể — mở scope / thêm affiliate / đổi sub-processor / phát sinh cross-border đều là trigger phải làm lại."},
       {q:"Gửi email marketing cho khách hàng NÊN dựa trên căn cứ pháp lý nào?",
         a:["Thực hiện hợp đồng","Nghĩa vụ pháp lý","Lợi ích chính đáng kiểu GDPR","Sự đồng ý (consent) riêng"],c:3,
         e:"Marketing không cần thiết để thực hiện hợp đồng dịch vụ chính; luật VN không có 'lợi ích chính đáng' rộng như GDPR → cần sự đồng ý riêng."},
       {q:"Định danh khách hàng (KYC) khi mở tài khoản dựa trên căn cứ nào (và do đó KHÔNG nên đi xin sự đồng ý)?",
         a:["Sự đồng ý","Nghĩa vụ pháp lý","Lợi ích công cộng","Không cần căn cứ nào"],c:1,
         e:"KYC/AML là nghĩa vụ pháp lý. Xin đồng ý cho nó là sai chỗ — tạo ảo giác khách 'có quyền từ chối'."},
-      {q:"ROPA là viết tắt của?",
-        a:["Report of Personal Accounts","Risk of Privacy Audit","Record of Processing Activities","Rules of Personal Access"],c:2,
-        e:"Record of Processing Activities — Hồ sơ các hoạt động xử lý dữ liệu cá nhân."},
+      {q:"Trong DPA (hợp đồng xử lý dữ liệu), điều khoản nào giúp bạn KỊP thông báo cơ quan khi đối tác để xảy ra sự cố?",
+        a:["Điều khoản giá &amp; thanh toán","Điều khoản gia hạn tự động","Điều khoản đối tác phải thông báo sự cố cho bạn không chậm trễ","Điều khoản quảng cáo thương hiệu"],c:2,
+        e:"DPA phải buộc bên xử lý báo sự cố cho bên kiểm soát (bạn) không chậm trễ — để bạn kịp thông báo cơ quan/khách trong hạn luật."},
       {q:"Khác biệt cốt lõi giữa Data Inventory và Data Mapping?",
         a:["Giống hệt nhau","Mapping chỉ là sơ đồ vẽ tay","Inventory chỉ dành cho IT","Inventory là danh mục 'có gì'; Mapping là bảng chi tiết toàn bộ vòng đời"],c:3,
         e:"Inventory = tổng quan 'có gì'; Mapping đi sâu nguồn→đích, mục đích, căn cứ pháp lý."},
@@ -2636,7 +2962,10 @@ WHERE  da_dong_y_marketing = 'KHONG';</code></pre>
 
   // ===== CSV download (template tải về) =====
   function downloadCSV(kind){
-    var map={inv:['tpl-inv','data-inventory-template'], ropa:['tpl-ropa','ROPA-template'], dpia:['tpl-dpia','DPIA-template']};
+    var map={inv:['tpl-inv','data-inventory-template'], ropa:['tpl-ropa','ROPA-template'], dpia:['tpl-dpia','DPIA-template'],
+      isoreview:['tpl-isoreview','ISO-DPO-review-checklist'], dpa:['tpl-dpa','DPA-clause-checklist'],
+      reassess:['tpl-reassess','DPIA-reassessment-triggers'], dsar:['tpl-dsar','DSAR-handling-checklist'],
+      incident:['tpl-incident','incident-response-runbook'], intake:['tpl-intake','privacy-intake-assessment-checklist']};
     var info=map[kind]; if(!info) return;
     var table=document.getElementById(info[0]); if(!table) return;
     var rows=[].slice.call(table.querySelectorAll('tr')).map(function(tr){
